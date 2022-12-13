@@ -6,5 +6,6 @@ import { verifyToken } from '../middlewares/index.js';
 
 router.get('/access_token', verifyToken, bankCtrl.accessToken);
 router.put('/associate_belvo', verifyToken, bankCtrl.associateBelvoData);
+router.get('/transactions', verifyToken, bankCtrl.getTransactions);
 
 export default router;

@@ -12,5 +12,6 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const router = (0, _express.Router)();
 router.get('/access_token', _index.verifyToken, bankCtrl.accessToken);
 router.put('/associate_belvo', _index.verifyToken, bankCtrl.associateBelvoData);
+router.get('/transactions', _index.verifyToken, bankCtrl.getTransactions);
 var _default = router;
 exports.default = _default;
