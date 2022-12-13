@@ -2,7 +2,7 @@ import Client from 'belvo';
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken'
 
-const client = new Client.default(
+const client = new Client(
     process.env.BELVO_KEY_ID,
     process.env.BELVO_KEY_PASSWORD,
     process.env.BELVO_ENVIRONMENT
