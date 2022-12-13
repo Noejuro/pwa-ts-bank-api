@@ -11,13 +11,13 @@ const userSchema = new Schema({
         unique: true,
         required: true
     },
-    link_id: {
+    link: {
         type: String,
         required: false
     },
     institution: {
         type: String,
-        required: true
+        required: false
     },
     password: {
         type: String,
