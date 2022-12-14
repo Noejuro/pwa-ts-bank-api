@@ -22,7 +22,7 @@ export const signUp = async (req, res) => {
 
     const token = jwt.sign({id: savedUser._id}, process.env.JWT_SECRET) 
 
-    res.status(200).json({token})
+    res.status(200).json({token, name, email})
 }
 
 export const login = async (req, res) => {
@@ -37,6 +37,8 @@ export const login = async (req, res) => {
 
     const token = jwt.sign({id: userFound._id}, process.env.JWT_SECRET)
 
-    res.json({token})
+    const { name, email, link, institution } = userFound;
+
+    res.json({token, name, email, link, institution})
 
 }
