@@ -25,7 +25,9 @@ const signUp = async (req, res) => {
     id: savedUser._id
   }, process.env.JWT_SECRET);
   res.status(200).json({
-    token
+    token,
+    name,
+    email
   });
 };
 exports.signUp = signUp;
@@ -43,8 +45,18 @@ const login = async (req, res) => {
   const token = _jsonwebtoken.default.sign({
     id: userFound._id
   }, process.env.JWT_SECRET);
+  const {
+    name,
+    email,
+    link,
+    institution
+  } = userFound;
   res.json({
-    token
+    token,
+    name,
+    email,
+    link,
+    institution
   });
 };
 exports.login = login;
